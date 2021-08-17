@@ -1,5 +1,4 @@
 from servo_gpio.servo import Servo
-import os
 
 
 def test_get_servo_angle(monkeypatch):
