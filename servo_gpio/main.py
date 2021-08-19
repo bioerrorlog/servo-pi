@@ -8,6 +8,5 @@ def main():
     servo_27 = Servo(27)
     
 
-
 if __name__ == '__main__':
     main()

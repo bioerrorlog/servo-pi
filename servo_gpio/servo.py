@@ -1,12 +1,15 @@
 from gpiozero import AngularServo
 
 
-class Servo:
-    def __init__(self, gpio_num):
-        self.servo = AngularServo(gpio_num, min_pulse_width=0.5/1000, max_pulse_width=2.5/1000)
+class SnakeServo(AngularServo):
+    def __init__(self, pin=None, *, initial_angle=0.0, min_angle=-90,
+                 max_angle=90, min_pulse_width=1/1000, max_pulse_width=2/1000,
+                 frame_width=20/1000, pin_factory=None):
+        super().__init__(pin, initial_angle=initial_angle,
+                        min_angle=min_angle, max_angle=max_angle,
+                         min_pulse_width=min_pulse_width,
+                         max_pulse_width=max_pulse_width,
+                         frame_width=frame_width, pin_factory=pin_factory)
 
     def set_angle(self, angle):
-        self.servo.angle = int(angle)
-
-    def get_angle(self):
-        return self.servo.angle
+        self.angle = int(angle)
