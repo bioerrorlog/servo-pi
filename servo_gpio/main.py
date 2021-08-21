@@ -7,6 +7,5 @@ def main():
     servo_17 = Servo(17)
     servo_27 = Servo(27)
     
-
 if __name__ == '__main__':
     main()
