@@ -17,8 +17,7 @@ class TestServo:
     def test_lead_another_servo(self, monkeypatch):
         monkeypatch.setenv('GPIOZERO_PIN_FACTORY', 'mock')
         monkeypatch.setenv('GPIOZERO_MOCK_PIN_CLASS', 'mockpwmpin')
-        with SnakeServo(17) as leader_servo, SnakeServo(18) as follower_servo:
-            leader_servo.wavelength = 0.2
+        with SnakeServo(17, wavelength=0.2) as leader_servo, SnakeServo(18) as follower_servo:
             leader_servo.add_follower(follower_servo)
 
             # TODO: async process
