@@ -20,7 +20,7 @@ class TestServo:
         with SnakeServo(17) as leader_servo, SnakeServo(18) as follower_servo:
             leader_servo.add_follower(follower_servo)
 
-            # TODO: async process
+            # TODO: concurrent process
             leader_servo.angle = 10
             follower_servo.angle = 0
             assert leader_servo.angle != follower_servo.angle
