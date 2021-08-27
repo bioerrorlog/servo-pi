@@ -16,7 +16,7 @@ def main():
 
     t = 0
     max_angle = 90
-    gap_angle = 45
+    gap_angle = 30
     while True:
         servo_17.angle = math.sin(math.radians(t % 360)) * max_angle
         servo_18.angle = math.sin(math.radians((t % 360) + gap_angle)) * max_angle
