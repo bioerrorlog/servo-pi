@@ -22,7 +22,7 @@ def main():
         servo_18.angle = math.sin(math.radians((t % 360) + gap_angle)) * max_angle
         servo_27.angle = math.sin(math.radians((t % 360) + (gap_angle * 2))) * max_angle
 
-        t += 1
+        t += 20
         time.sleep(0.1)
     
 if __name__ == '__main__':
